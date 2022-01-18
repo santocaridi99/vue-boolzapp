@@ -31,16 +31,10 @@ body{
 }
 .main-central{
     height: calc(100% - 120px);
-    border: 2px solid black;
     background: url('../img/mine.jpg');
     object-fit: contain;
 }
 /* -------------------------------------------------- */
-/* organizzazione Micro aree */
-.chat-message,.sx-message,.dx-message{
-    border: 2px solid black;
-    height: 100%;
-}
 /* Sidebar */
 /* container conversation o contenitore delle conversazioni */
 ul{
@@ -82,4 +76,44 @@ li>img,.user>img,.recipient>img{
 .chat-emoji>i,.chat-rec>i{
     font-size: 25px;
     color: gray;
+}
+/* sezione messaggi */
+.chat-message::after,.messageGreen::after,.messageWhite::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.message{
+    margin: 5px;
+    width: 100%;
+    height: 60px;
+}
+.messageGreen,.messageWhite{
+    width: 300px;
+    height: 100%;
+    padding: 0 5px;
+    line-height: 60px;
+    border-radius: 5px;
+}
+.messageGreen{
+    float: right;
+    background-color: #d3f9ba;
+}
+.messageWhite{
+    float: left;
+    background-color: white;
+}
+.message>span{
+    font-size: 12px;
+}
+/* contenuto messaggi */
+.messageContent{
+  font-size: 15px;
+}
+.messageDate{
+    float: right;
+    font-size: 8px;
+    margin-top: 20px;
 }
