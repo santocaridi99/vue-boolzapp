@@ -1,14 +1,16 @@
+body{
+    background-color: #d6dbd7;
+}
 /* preferito creare i container che stanno in background con altezze padding e colori custom */
 .big-container{
     width: 100%;
 }
 .green-section{
     width: 100%;
-    height: 18vh;
+    height: 30vh;
     background-color: #029688;
 }
-.grey-section{
-    height:100%;
-    width: 100%;
-    background-color: #d6dbd7;
+.application{
+    border: 5px solid black;
+    transform: translate(-50%,-1%);
 }

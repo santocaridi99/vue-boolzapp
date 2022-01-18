@@ -11,10 +11,9 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
-    <div class="big-container">
-        <div class="green-section"></div>
-        <div class="grey-section">
-            <div id="app">
+    <div class="big-container position-relative">
+            <div class="green-section"></div>
+            <div id="app" class="container application position-absolute top-50 start-50">
                 <ul>
                     <li v-for='(contact,i) in contacts'>
                         <img :src="'./img/avatar'+contact.avatar+'.jpg'" :alt="contact.name">
@@ -22,7 +21,6 @@
                     </li>
                 </ul>
             </div>
-        </div>
     
     </div>
     <script src="js/script.js"></script>
