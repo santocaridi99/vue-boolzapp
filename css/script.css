@@ -2,40 +2,33 @@
 body{
     background-color: #d6dbd7;
 }
+.cento{
+    height: 100vh;
+}
 /* preferito creare i container che stanno in background con altezze padding e colori custom */
 .big-container{
     width: 100%;
 }
 .green-section{
     width: 100%;
-    height: 20vh;
+    height: 120px;
     background-color: #029688;
 }
 .application{
-    border: 5px solid black;
     transform: translate(-50%,-2%);
+    height: 100vh;
 }
-
-.sidebar{
-    border:2px solid black
-}
-.main{
-    border: 1px solid black;
-}
-
 .sidebar-header,.main-header,.main-footer{
     height: 60px;
-    border: 2px solid black;
+    background-color: #f2ede9;
 }
 .alert{
     height: 80px;
-    border: 2px solid black;
+    background-color: #8edafc;
 }
 .search{
     height: 50px;
-    border: 2px solid black;
 }
-
 .main-central{
     height: calc(100% - 120px);
     border: 2px solid black;
@@ -44,7 +37,40 @@ body{
 }
 /* -------------------------------------------------- */
 /* organizzazione Micro aree */
-.user,.recipient,.chat-input,.chat-message,.sx-message,.dx-message{
+.recipient,.chat-input,.chat-message,.sx-message,.dx-message{
     border: 2px solid black;
     height: 100%;
+}
+
+/* Sidebar */
+/* container conversation o contenitore delle conversazioni */
+ul{
+    width: 100%;
+}
+li{
+    display: flex;
+    list-style: none;
+    margin: 10px 0;
+}
+li>img,.user>img{
+    width: 50px;
+    height: 50px;
+}
+.user>i{
+    font-size: 20px;
+    color: gray;
+}
+.fa-bell-slash{
+    color: #8edafc;
+    background: white;
+    font-size: 25px;
+    padding: 10px;
+}
+/* font size di questo paragrafo customizzato */
+.text-box>p{
+    font-size: 12px;
+}
+.search>input{
+    width: 100%;
+    height: 80%;
 }
