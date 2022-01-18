@@ -12,15 +12,27 @@
 </head>
 <body>
     <div class="big-container position-relative">
-            <div class="green-section"></div>
-            <div id="app" class="container application position-absolute top-50 start-50">
-                <ul>
-                    <li v-for='(contact,i) in contacts'>
-                        <img :src="'./img/avatar'+contact.avatar+'.jpg'" :alt="contact.name">
-                        <span>{{contact.name}}</span>
-                    </li>
-                </ul>
-            </div>
+        <div class="green-section"></div>
+        <div id="app" class="container px-2 bg-light application position-absolute top-50 start-50">
+          <div class="row">
+                <div class="sidebar col-4">
+                    <div class="container-fluid sidebar-header"></div>
+                    <div class="container-fluid alert mb-0"></div>
+                    <div class="container-fluid search"></div>
+                    <ul>
+                        <li v-for='(contact,i) in contacts'>
+                            <img  class="img-fluid" :src="'./img/avatar'+contact.avatar+'.jpg'" :alt="contact.name">
+                            <span>{{contact.name}}</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="main col-8  px-0">
+                    <div class="container-fluid main-header"></div>
+                    <div class="container-fluid main-central"></div>
+                    <div class="container-fluid main-footer"></div>
+                </div>
+          </div>     
+        </div>
     
     </div>
     <script src="js/script.js"></script>
