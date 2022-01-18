@@ -11,22 +11,31 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
+    <!--container  scheletro principale-->
     <div class="big-container position-relative">
+        <!-- sezione verde background -->
         <div class="green-section"></div>
+        <!-- applicatione principale che sta in position absolute  -->
         <div id="app" class="container px-2 bg-light application position-absolute top-50 start-50">
+            <!-- row -->
           <div class="row cento">
+              <!-- sidebar laterale -->
                 <div class="sidebar col-4 pe-0 ps-1">
+                    <!-- header della sidebar -->
                     <div class="container-fluid sidebar-header d-flex p-0">
+                        <!-- sezione user dove ci sono dati utente , foto e nome utente -->
                         <div class="user user-data d-flex col-9 align-items-center">
                             <img class="img-fluid rounded-circle" src="./img/avatar_io.jpg" alt="io">
                             <span class="fw-bold">Nome Utente</span>
                         </div>
+                        <!-- sezione user tools dove ci sono icone di fontawesome -->
                         <div class="user user-tools d-flex justify-content-around align-items-center col-3">
                             <i class="fas fa-circle-notch"></i>
                             <i class="fas fa-comment-alt"></i>
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
                     </div>
+                    <!-- sezione alert dove c'è campanella e  scritta per annullare notifiche -->
                     <div class="container-fluid alert rounded-0 mb-0 d-flex">
                         <i class="far fa-bell-slash rounded-circle"></i>
                         <div class="text-box col-10 ms-2">
@@ -34,11 +43,14 @@
                             <p class="text-decoration-underline">Attiva notifiche desktop</p>
                         </div>
                     </div>
+                    <!-- sezione search cercare o iniziare nuova chat -->
                     <div class="container-fluid search d-flex align-items-center p-1">
                         <input  placeholder="&#xf002; Cerca o inizia una nuova chat">
                     </div>
+                    <!-- container dove ci sono tutte le conversazioni -->
                     <div class="container-fluid conversations p-0">
                         <ul class="p-2">
+                            <!-- v-for contact in contatti aggiungo immagine con v-bind e aggiungo nomne con i baffetti -->
                             <li v-for='(contact,i) in contacts'>
                                 <img  class="img-fluid rounded-circle me-2" :src="'./img/avatar'+contact.avatar+'.jpg'" :alt="contact.name">
                                 <span class="fw-bold">{{contact.name}}</span>
@@ -46,9 +58,13 @@
                         </ul>
                     </div>
                 </div>
+                <!-- contenitore del main -->
                 <div class="main col-8  px-0">
+                    <!-- header del main -->
                     <div class="container-fluid main-header d-flex p-0">
+                        <!-- contenitore recipient è il contenitore dove ci sono dati del destinatario e tools per interagire con la chat -->
                         <div class="border-start border-1 recipient recipient-data d-flex align-items-center col-10 ">
+                            <!-- dati del destinatario -->
                             <img class="img-fluid rounded-circle" src="./img/avatar_1.jpg" alt="Michele">
                             <div class="recipient-data-text">
                                 <span class="fw-bold">Michele</span>
@@ -57,14 +73,19 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- tools per interagire con la chat del destinatario  -->
                         <div class="recipient recipient-tools d-flex justify-content-around align-items-center col-2">
                             <i class="fas fa-search"></i>
                             <i class="fas fa-paperclip"></i>
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
                     </div>
+                    <!-- container main centrale -->
                     <div class="container-fluid main-central p-5">
+                        <!-- container dove ci saranno i messaggi -->
                         <div class="container chat-message">
+                            <!-- messaggi white quelli dell'altro utente che flottano a sinistra -->
+                            <!-- messaggi green quelli che invia l'utente che flottano a destra -->
                             <div class="message">
                                 <div class="messageGreen">
                                     <span class="messageContent">Hai portato a spasso il cane?</span>
@@ -85,13 +106,18 @@
                             </div>
                         </div>
                     </div>
+                    <!-- main footer -->
+                    <!-- ci sono le input della chat -->
                     <div class="container-fluid main-footer d-flex p-0">
+                        <!-- chat-emoji pulsante delle emoji -->
                         <div class="chat-input chat-emoji col-2 d-flex justify-content-center align-items-center">
                             <i class="far fa-smile"></i>
                         </div>
+                        <!-- input per scrivere il messaggio -->
                         <div class="chat-input chat-textbox col-8 d-flex align-items-center">
                             <input  placeholder="Scrivi un messaggio">
                         </div>
+                        <!-- chat-rec pulsante o sezione per registrare -->
                         <div class="chat-input chat-rec col-2 d-flex justify-content-center align-items-center">
                             <i class="fas fa-microphone"></i>
                         </div>
@@ -99,7 +125,6 @@
                 </div>
           </div>     
         </div>
-    
     </div>
     <script src="js/script.js"></script>
 </body>

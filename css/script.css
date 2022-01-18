@@ -2,33 +2,37 @@
 body{
     background-color: #d6dbd7;
 }
+/* per dare ad un container 100vh */
 .cento{
     height: 100vh;
 }
 /* preferito creare i container che stanno in background con altezze padding e colori custom */
-.big-container{
-    width: 100%;
-}
+/* sezione verde di background */
 .green-section{
     width: 100%;
     height: 120px;
     background-color: #029688;
 }
+/* dove è contenuta tutta l'applicazione */
 .application{
     transform: translate(-50%,-2%);
     height: 100vh;
 }
+/* tutti gli header */
 .sidebar-header,.main-header,.main-footer{
     height: 60px;
     background-color: #f2ede9;
 }
+/* sezione alert dove si disattivano le notifiche */
 .alert{
     height: 80px;
     background-color: #8edafc;
 }
+/* sezione input per cercare o aggiungere nuove chat */
 .search{
     height: 50px;
 }
+/* conteiner centrale , il cuore dell'app */
 .main-central{
     height: calc(100% - 120px);
     background: url('../img/mine.jpg');
@@ -36,7 +40,7 @@ body{
 }
 /* -------------------------------------------------- */
 /* Sidebar */
-/* container conversation o contenitore delle conversazioni */
+/* lista della sidebar */
 ul{
     width: 100%;
 }
@@ -54,6 +58,7 @@ li>img,.user>img,.recipient>img{
     font-size: 20px;
     color: gray;
 }
+/* icona della campanella nella sezione alert */
 .fa-bell-slash{
     color: #8edafc;
     background: white;
@@ -78,13 +83,12 @@ li>img,.user>img,.recipient>img{
     color: gray;
 }
 /* sezione messaggi */
+/* clearfix per flottare */
 .chat-message::after,.messageGreen::after,.messageWhite::after {
     content: "";
     display: table;
     clear: both;
 }
-
-
 .message{
     margin: 5px;
     width: 100%;
@@ -97,10 +101,12 @@ li>img,.user>img,.recipient>img{
     line-height: 60px;
     border-radius: 5px;
 }
+/* messaggi verdi utente */
 .messageGreen{
     float: right;
     background-color: #d3f9ba;
 }
+/* messaggi bianchi mittente */
 .messageWhite{
     float: left;
     background-color: white;
