@@ -37,7 +37,7 @@ body{
 }
 /* -------------------------------------------------- */
 /* organizzazione Micro aree */
-.recipient,.chat-input,.chat-message,.sx-message,.dx-message{
+.chat-input,.chat-message,.sx-message,.dx-message{
     border: 2px solid black;
     height: 100%;
 }
@@ -52,11 +52,12 @@ li{
     list-style: none;
     margin: 10px 0;
 }
-li>img,.user>img{
+li>img,.user>img,.recipient>img{
     width: 50px;
     height: 50px;
 }
-.user>i{
+/* dimensioni e colori icone */
+.user>i,.recipient>i{
     font-size: 20px;
     color: gray;
 }
@@ -73,4 +74,7 @@ li>img,.user>img{
 .search>input{
     width: 100%;
     height: 80%;
+}
+.recipient-data-text>div{
+    font-size: 12px;
 }
