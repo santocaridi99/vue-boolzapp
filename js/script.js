@@ -102,7 +102,9 @@ new Vue({
             date:'',
             text:'Ok!',
             status:'received'
-        }
+        },
+        // inizializzo un testo temporaneo per la barra di ricerca 
+        temporaryText:'',
 
             
             
@@ -133,6 +135,17 @@ new Vue({
                 t.contacts[index].messages.push(t.aiAnswers);
             }, 2000);
 
+        }
+
+    },
+    // una proprietà computed serve a descrivere un valore che dipende da un altro valore
+    computed:{
+        //funzione filter che crea  ritorna un nuovo oggetto filtrato per nome 
+        //uso metodo match per conftontare i due testi 
+        filteredNames:function(){
+            return this.contacts.filter((obj)=>{
+                return obj.name.toLowerCase().match(this.temporaryText.toLowerCase())
+            });
         }
 
     }

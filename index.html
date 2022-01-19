@@ -45,13 +45,15 @@
                     </div>
                     <!-- sezione search cercare o iniziare nuova chat -->
                     <div class="container-fluid search d-flex align-items-center p-1">
-                        <input  placeholder="&#xf002; Cerca o inizia una nuova chat">
+                        <!-- applico v-model all'input per modificare temporarytext -->
+                        <input  v-model="temporaryText" placeholder="&#xf002; Cerca o inizia una nuova chat">
                     </div>
                     <!-- container dove ci sono tutte le conversazioni -->
                     <div class="container-fluid conversations p-0">
                         <ul class="p-2">
                             <!-- v-for contact in contatti aggiungo immagine con v-bind e aggiungo nomne con i baffetti -->
-                            <li v-for='(contact,i) in contacts' @click='selectChat(i)'>
+                            <!-- faccio il for per nomi filtrati -->
+                            <li v-for='(contact,i) in filteredNames' @click='selectChat(i)'>
                                 <img  class="img-fluid rounded-circle me-2" :src="'./img/avatar'+contact.avatar+'.jpg'" :alt="contact.name">
                                 <span class="fw-bold">{{contact.name}}</span>
                             </li>
