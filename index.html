@@ -107,8 +107,9 @@
                             <i class="far fa-smile"></i>
                         </div>
                         <!-- input per scrivere il messaggio -->
+                        <!-- v-model per modificare il messaggio temporaneo e keyup su invio per esegure la function send message -->
                         <div class="chat-input chat-textbox col-8 d-flex align-items-center">
-                            <input  placeholder="Scrivi un messaggio">
+                            <input  placeholder="Scrivi un messaggio" v-model='temporaryMessage.text' @keyup.enter='sendMessage(currentIndex)'>
                         </div>
                         <!-- chat-rec pulsante o sezione per registrare -->
                         <div class="chat-input chat-rec col-2 d-flex justify-content-center align-items-center">

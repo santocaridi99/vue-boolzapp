@@ -88,13 +88,37 @@ new Vue({
                     }
                 ],
             },
-        ]        
+        ],
+        // inizializzo un messaggio temporaneo vuoto
+        // con status sent perchè è quello che inviamo
+        temporaryMessage:{
+                date:'',
+                text:'',
+                status:'sent'
+        }
+
+            
+            
     },
     // qui aggiungo tutti i miei metodi
     methods:{
+        // metodo per selezionare la chat 
+        // ovvero quando la chiamo il currentIndex si sposta nell'indice selezionato
         selectChat:function(index){
             this.currentIndex=index;
         },
+        // metodo per inviare un messaggio 
+        // dove il messaggio temporaneo creato sopra che viene modificato dal v-model in input
+        // viene pushato nell'array di messages presenti in contacts nell' indice corrente
+        // una volta pushato viene  resettato
+        sendMessage:function(index){
+            this.contacts[index].messages.push(this.temporaryMessage);
+            this.temporaryMessage={
+                date:'',
+                text:'',
+                status:'sent'
+            }    
+        }
 
     }
 })
