@@ -92,10 +92,10 @@ li>img,.user>img,.recipient>img{
 .message{
     margin: 5px;
     width: 100%;
-    height: 60px;
+    height: 70px;
 }
 .messageGreen,.messageWhite{
-    width: 300px;
+    width: 350px;
     height: 100%;
     padding: 0 5px;
     line-height: 60px;
@@ -116,7 +116,7 @@ li>img,.user>img,.recipient>img{
 }
 /* contenuto messaggi */
 .messageContent{
-  font-size: 15px;
+  font-size: 13px;
 }
 .messageDate{
     float: right;

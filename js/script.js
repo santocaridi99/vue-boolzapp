@@ -89,5 +89,12 @@ new Vue({
                 ],
             },
         ]        
+    },
+    // qui aggiungo tutti i miei metodi
+    methods:{
+        selectChat:function(index){
+            this.currentIndex=index;
+        },
+
     }
 })

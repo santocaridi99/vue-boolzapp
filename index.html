@@ -51,7 +51,7 @@
                     <div class="container-fluid conversations p-0">
                         <ul class="p-2">
                             <!-- v-for contact in contatti aggiungo immagine con v-bind e aggiungo nomne con i baffetti -->
-                            <li v-for='(contact,i) in contacts'>
+                            <li v-for='(contact,i) in contacts' @click='selectChat(i)'>
                                 <img  class="img-fluid rounded-circle me-2" :src="'./img/avatar'+contact.avatar+'.jpg'" :alt="contact.name">
                                 <span class="fw-bold">{{contact.name}}</span>
                             </li>
@@ -65,9 +65,10 @@
                         <!-- contenitore recipient è il contenitore dove ci sono dati del destinatario e tools per interagire con la chat -->
                         <div class="border-start border-1 recipient recipient-data d-flex align-items-center col-10 ">
                             <!-- dati del destinatario -->
-                            <img class="img-fluid rounded-circle" src="./img/avatar_1.jpg" alt="Michele">
+                            <!-- aggiunto immagini e nome in modo dinamico dando il current index a contacts.name -->
+                            <img class="img-fluid rounded-circle" :src="'./img/avatar'+contacts[currentIndex].avatar+'.jpg'" alt="contacts[currentIndex].name">
                             <div class="recipient-data-text">
-                                <span class="fw-bold">Michele</span>
+                                <span class="fw-bold">{{contacts[currentIndex].name}}</span>
                                 <div class="mt-0">
                                    <span> Ultimo accesso alle</span>
                                 </div>
