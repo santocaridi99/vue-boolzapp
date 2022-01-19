@@ -2,10 +2,6 @@
 body{
     background-color: #d6dbd7;
 }
-/* per dare ad un container 100vh */
-.cento{
-    height: 100vh;
-}
 /* preferito creare i container che stanno in background con altezze padding e colori custom */
 /* sezione verde di background */
 .green-section{
@@ -34,9 +30,10 @@ body{
 }
 /* conteiner centrale , il cuore dell'app */
 .main-central{
-    height: calc(100% - 120px);
+    height: calc(100vh - 120px);
     background: url('../img/mine.jpg');
     object-fit: contain;
+    overflow-y: scroll;
 }
 /* -------------------------------------------------- */
 /* Sidebar */
