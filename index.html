@@ -86,22 +86,14 @@
                         <div class="container chat-message">
                             <!-- messaggi white quelli dell'altro utente che flottano a sinistra -->
                             <!-- messaggi green quelli che invia l'utente che flottano a destra -->
-                            <div class="message">
-                                <div class="messageGreen">
-                                    <span class="messageContent">Hai portato a spasso il cane?</span>
-                                    <span class="messageDate">10/01/2020 15:30:55</span>
-                                </div>
-                            </div>
-                            <div class="message">
-                                <div class="messageGreen">
-                                    <span class="messageContent">Ricordati di dargli da mangiare</span>
-                                    <span class="messageDate">10/01/2020 15:50:00</span>
-                                </div>
-                            </div>
-                            <div class="message">
-                                <div class="messageWhite">
-                                    <span class="messageContent">Tutto fatto!</span>
-                                    <span class="messageDate">10/01/2020 16:15:22</span>
+                            <!-- v for per ogni oggetto(chat) di messages che prendo da contacts[indice corrente].immage -->
+                            <!-- creo un div message che a cui assegno un div interno -->
+                            <!-- a cui do classe messagegreen se è stato inviato e message white se è stato ricevuto -->
+                            <!-- stampo il suo testo relativo e la sua data -->
+                            <div class="message"  v-for="(chat,i) in contacts[currentIndex].messages">
+                                <div :class="chat.status==='sent' ? 'messageGreen': 'messageWhite' ">
+                                    <span class="messageContent">{{chat.text}}</span>
+                                    <span class="messageDate">{{chat.date}}</span>
                                 </div>
                             </div>
                         </div>

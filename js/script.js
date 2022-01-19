@@ -1,6 +1,8 @@
 new Vue({
     el:"#app",
     data:{
+        // setto un current index a 0
+        currentIndex:0,
         // array di oggetti contenenti dati degli utenti
         contacts: [
             {
