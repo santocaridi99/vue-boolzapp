@@ -3,6 +3,7 @@ new Vue({
     data:{
         // setto un current index a 0
         currentIndex:0,
+        timer:0,
         // array di oggetti contenenti dati degli utenti
         contacts: [
             {
@@ -95,6 +96,12 @@ new Vue({
                 date:'',
                 text:'',
                 status:'sent'
+        },
+        // inizializzo i messaggi dei bot
+        aiAnswers:{
+            date:'',
+            text:'Ok!',
+            status:'received'
         }
 
             
@@ -117,7 +124,15 @@ new Vue({
                 date:'',
                 text:'',
                 status:'sent'
-            }    
+            }  
+            // aggiunto risposta 
+            // ad ogni messaggio che invio dopo due secondi c'è un setTimeout
+            //che pusherà il messaggio mandato dai bot
+            let t=this;
+            this.timer=setTimeout(function() {
+                t.contacts[index].messages.push(t.aiAnswers);
+            }, 2000);
+
         }
 
     }
