@@ -3,7 +3,11 @@ new Vue({
     data:{
         // setto un current index a 0
         currentIndex:0,
+        // inizializzo timer a 0 mi servirà per il setTimeout
         timer:0,
+        //inizializzo una modale a false che mi servirà una volta cliccato il messaggio
+        modal:false,
+        modalIndex:0,
         // array di oggetti contenenti dati degli utenti
         contacts: [
             {
@@ -135,6 +139,10 @@ new Vue({
                 t.contacts[index].messages.push(t.aiAnswers);
             }, 2000);
 
+        },
+        openModal:function(index){
+            this.modalIndex=index;
+            this.modal=!this.modal
         }
 
     },
