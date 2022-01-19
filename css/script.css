@@ -84,7 +84,7 @@ li>img,.user>img,.recipient>img{
 }
 /* sezione messaggi */
 /* clearfix per flottare */
-.chat-message::after,.messageGreen::after,.messageWhite::after {
+.chat-message::after{
     content: "";
     display: table;
     clear: both;
@@ -95,11 +95,12 @@ li>img,.user>img,.recipient>img{
     height: 70px;
 }
 .messageGreen,.messageWhite{
+    display: flex;
     width: 350px;
     height: 100%;
     padding: 0 5px;
-    line-height: 60px;
     border-radius: 5px;
+    justify-content: space-between;
 }
 /* messaggi verdi utente */
 .messageGreen{
@@ -117,9 +118,10 @@ li>img,.user>img,.recipient>img{
 /* contenuto messaggi */
 .messageContent{
   font-size: 13px;
+  align-self: center;
 }
 .messageDate{
-    float: right;
     font-size: 8px;
     margin-top: 20px;
+    align-self: flex-end;
 }

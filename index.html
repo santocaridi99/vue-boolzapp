@@ -96,6 +96,7 @@
                             <div class="message"  v-for="(chat,i) in contacts[currentIndex].messages">
                                 <div :class="chat.status==='sent' ? 'messageGreen': 'messageWhite' ">
                                     <span class="messageContent">{{chat.text}}</span>
+                                    <!-- <i class="fas fa-chevron-down"></i> -->
                                     <span class="messageDate">{{chat.date}}</span>
                                 </div>
                             </div>
