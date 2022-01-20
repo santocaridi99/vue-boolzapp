@@ -108,7 +108,7 @@
                                     <!-- e se il suo indice è relativo all'indice del messaggio selezionato -->
                                     <div v-if='modal &&  (modalIndex===i)' class="modals  position-absolute top-0 end-0 m-4">
                                         <p>Message info</p>
-                                        <p @click='removeMessage(modalIndex)'>Delete message</p>
+                                        <p @click='removeMessage(currentIndex)'>Delete message</p>
                                     </div>
                                     <span class="messageDate">{{chat.date}}</span>
                                 </div>
