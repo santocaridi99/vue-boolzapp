@@ -101,10 +101,12 @@
                             <!-- a cui do classe messagegreen se è stato inviato e message white se è stato ricevuto -->
                             <!-- stampo il suo testo relativo e la sua data -->
                             <div class="message"  v-for="(chat,i) in contacts[currentIndex].messages">
-                                <div :class="chat.status==='sent' ? 'messageGreen': 'messageWhite' " @click='openModal(i)'>
+                                <div :class="chat.status==='sent' ? 'messageGreen': 'messageWhite' " >
                                     <span class="messageContent">{{chat.text}}</span>
-                                    <i v-if="modal" class="fas fa-chevron-down position-absolute top-0 end-0 m-2"></i>
-                                    <div v-if='modal' class="modals  position-absolute top-0 end-0 m-4">
+                                    <i  @click='openModal(i)' class="fas fa-chevron-down position-absolute top-0 end-0 m-2"></i>
+                                    <!-- modale appare solo se al click dell icona chiamo funzione open modal -->
+                                    <!-- e se il suo indice è relativo all'indice del messaggio selezionato -->
+                                    <div v-if='modal && (modalIndex===i)' class="modals  position-absolute top-0 end-0 m-4">
                                         <p>Message info</p>
                                         <p>Delete message</p>
                                     </div>

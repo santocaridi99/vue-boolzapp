@@ -135,6 +135,8 @@ new Vue({
             }, 2000);
 
         },
+        // open modal oltre a far cambiare il valore booleano di modal
+        // assegna indice della modale assegnato nel data a indice dei messaggi
         openModal:function(index){
             this.modalIndex=index;
             this.modal=!this.modal
