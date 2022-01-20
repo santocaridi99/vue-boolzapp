@@ -146,15 +146,16 @@ new Vue({
         }
 
     },
+    // Soluzione alternativa per fare il filter
     // una proprietà computed serve a descrivere un valore che dipende da un altro valore
-    computed:{
-        //funzione filter che crea  ritorna un nuovo oggetto filtrato per nome 
-        //uso metodo match per conftontare i due testi 
-        filteredNames:function(){
-            return this.contacts.filter((obj)=>{
-                return obj.name.toLowerCase().match(this.temporaryText.toLowerCase())
-            });
-        }
+    // computed:{
+    //     //funzione filter che crea  ritorna un nuovo oggetto filtrato per nome 
+    //     //uso metodo match per conftontare i due testi 
+    //     filteredNames:function(){
+    //         return this.contacts.filter((obj)=>{
+    //             return obj.name.toLowerCase().match(this.temporaryText.toLowerCase())
+    //         });
+    //     }
 
-    }
+    // }
 })

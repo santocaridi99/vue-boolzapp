@@ -52,11 +52,17 @@
                     <!-- container dove ci sono tutte le conversazioni -->
                     <div class="container-fluid conversations p-0">
                         <ul class="p-2">
-                            <!-- v-for contact in contatti aggiungo immagine con v-bind e aggiungo nomne con i baffetti -->
-                            <!-- faccio il for per nomi filtrati -->
-                            <li v-for='(contact,i) in filteredNames' @click='selectChat(i)'>
-                                <img  class="img-fluid rounded-circle me-2" :src="'./img/avatar'+contact.avatar+'.jpg'" :alt="contact.name">
-                                <span class="fw-bold">{{contact.name}}</span>
+                            <!-- v-for contact in contatti-->
+                            <!-- chiamo funzione select chat ad ogni click -->
+                            <li 
+                             v-for='(contact,i) in contacts'
+                             @click='selectChat(i)'
+                            >
+                             <!-- dentro li ho un div contatti che compare solo se contact.name è uguale a quello che scriviamo nella barra di ricerca -->
+                                <div v-if="contact.name.toLowerCase().includes(temporaryText)" class="contatti" >
+                                    <img  class="img-fluid rounded-circle me-2" :src="'./img/avatar'+contact.avatar+'.jpg'" :alt="contact.name">
+                                    <span class="fw-bold">{{contact.name}}</span>
+                                </div>
                             </li>
                         </ul>
                     </div>
