@@ -95,18 +95,7 @@ new Vue({
             },
         ],
         // inizializzo un messaggio temporaneo vuoto
-        // con status sent perchè è quello che inviamo
-        temporaryMessage:{
-                date:'',
-                text:'',
-                status:'sent'
-        },
-        // inizializzo i messaggi dei bot
-        aiAnswers:{
-            date:'',
-            text:'Ok!',
-            status:'received'
-        },
+        temporaryMessage:'',
         // inizializzo un testo temporaneo per la barra di ricerca 
         temporaryText:'',
 
@@ -125,27 +114,37 @@ new Vue({
         // viene pushato nell'array di messages presenti in contacts nell' indice corrente
         // una volta pushato viene  resettato
         sendMessage:function(index){
-            this.contacts[index].messages.push(this.temporaryMessage);
-            this.temporaryMessage={
-                date:'',
-                text:'',
+            this.contacts[index].messages.push({
+                date:this.getCurrentDate(),
+                text:this.temporaryMessage,
                 status:'sent'
-            }  
+            });
+            this.temporaryMessage=''
             // aggiunto risposta 
             // ad ogni messaggio che invio dopo due secondi c'è un setTimeout
             //che pusherà il messaggio mandato dai bot
             let t=this;
             this.timer=setTimeout(function() {
-                t.contacts[index].messages.push(t.aiAnswers);
+                // messaggio del bot
+                let aiAnswers={
+                    date:t.getCurrentDate(),
+                    text:'Ok!',
+                    status:'received'
+                }
+                t.contacts[index].messages.push(aiAnswers);
             }, 2000);
 
         },
         openModal:function(index){
             this.modalIndex=index;
             this.modal=!this.modal
+        },
+        // metodo per prendere data con dayjs
+        getCurrentDate(){
+            return dayjs().format('DD/MM/YYYY HH:mm:ss');
         }
-
     },
+    
     // Soluzione alternativa per fare il filter
     // una proprietà computed serve a descrivere un valore che dipende da un altro valore
     // computed:{

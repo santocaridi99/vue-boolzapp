@@ -47,7 +47,7 @@ li{
 }
 /* altezza di ogni contatto  */
 .contatti{
-    height: 50px;
+    height: 60px;
 }
 .contatti>img,.user>img,.recipient>img{
     width: 50px;

@@ -8,8 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/script.css">
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <!-- <script src="path/to/dayjs/dayjs.min.js"></script> -->
 </head>
 <body>
     <!--container  scheletro principale-->
@@ -123,7 +123,7 @@
                         <!-- input per scrivere il messaggio -->
                         <!-- v-model per modificare il messaggio temporaneo e keyup su invio per esegure la function send message -->
                         <div class="chat-input chat-textbox col-8 d-flex align-items-center">
-                            <input  placeholder="Scrivi un messaggio" v-model='temporaryMessage.text' @keyup.enter='sendMessage(currentIndex)'>
+                            <input  placeholder="Scrivi un messaggio" v-model='temporaryMessage' @keyup.enter='sendMessage(currentIndex)'>
                         </div>
                         <!-- chat-rec pulsante o sezione per registrare -->
                         <div class="chat-input chat-rec col-2 d-flex justify-content-center align-items-center">
