@@ -59,7 +59,7 @@
                              @click='selectChat(i)'
                             >
                              <!-- dentro li ho un div contatti che compare solo se contact.name è uguale a quello che scriviamo nella barra di ricerca -->
-                                <div v-if="contact.name.toLowerCase().includes(temporaryText)" class="contatti" >
+                                <div v-if="contact.name.toLowerCase().includes(temporaryText)" class="contatti position-relative" >
                                     <img  class="img-fluid rounded-circle me-2" :src="'./img/avatar'+contact.avatar+'.jpg'" :alt="contact.name">
                                     <span class="fw-bold">{{contact.name}}</span>
                                 </div>
@@ -79,7 +79,7 @@
                             <div class="recipient-data-text">
                                 <span class="fw-bold">{{contacts[currentIndex].name}}</span>
                                 <div class="mt-0">
-                                   <span> Ultimo accesso alle</span>
+                                   <span> Ultimo accesso alle {{getLastMsgDate()}}</span>
                                 </div>
                             </div>
                         </div>

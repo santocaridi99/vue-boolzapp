@@ -96,7 +96,6 @@ li{
 .messageGreen,.messageWhite{
     position: relative;
     display: flex;
-    width: 350px;
     height: 100%;
     padding: 0 5px;
     border-radius: 5px;
@@ -137,4 +136,7 @@ li{
 .modals>p{
     text-align: center;
     font-size: 10px;
+}
+.contatti{
+    width: 100%;
 }

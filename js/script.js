@@ -2,6 +2,7 @@ new Vue({
     el:"#app",
     data:{
         // setto un current index a 0
+        // contatore per i contatti
         currentIndex:0,
         // inizializzo timer a 0 mi servirà per il setTimeout
         timer:0,
@@ -147,6 +148,12 @@ new Vue({
         // e ai messaggi elimino quello desiderato dato dal modalindex
         removeMessage:function(){
             this.contacts[this.currentIndex].messages.splice(this.modalIndex,1);
+        },
+        // metodo per prendere ultimo accesso
+        // che corrisponde a ultimo messaggio
+        getLastMsgDate:function(){
+            let max=this.contacts[this.currentIndex].messages.length - 1
+            return this.contacts[this.currentIndex].messages[max].date;
         }
     },
     
