@@ -142,9 +142,9 @@ new Vue({
         getCurrentDate(){
             return dayjs().format('DD/MM/YYYY HH:mm:ss');
         },
-        // removeMessage:function(index,i){
-        //     this.contacts[index].messages.splice(i,1);
-        // }
+        removeMessage:function(index){
+            this.contacts[index].messages.splice(index,1);
+        }
     },
     
     // Soluzione alternativa per fare il filter
