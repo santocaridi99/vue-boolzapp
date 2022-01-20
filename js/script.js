@@ -154,7 +154,16 @@ new Vue({
         getLastMsgDate:function(){
             let max=this.contacts[this.currentIndex].messages.length - 1
             return this.contacts[this.currentIndex].messages[max].date;
-        }
+        },
+        // passo ai metodi contact come nome oggetto dell' array messaggi
+        // indice lunghezza massima meno uno
+        // restiutiscono ultimo messaggio e ultima data dell'array
+        getLastMsg(contact){
+            return contact.messages[contact.messages.length - 1].text;
+        },
+         getLastAcces(contact){
+            return contact.messages[contact.messages.length - 1].date;
+        },
     },
     
     // Soluzione alternativa per fare il filter

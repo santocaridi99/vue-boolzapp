@@ -62,6 +62,8 @@
                                 <div v-if="contact.name.toLowerCase().includes(temporaryText)" class="contatti position-relative" >
                                     <img  class="img-fluid rounded-circle me-2" :src="'./img/avatar'+contact.avatar+'.jpg'" :alt="contact.name">
                                     <span class="fw-bold">{{contact.name}}</span>
+                                    <span class="lasthour position-absolute top-0 end-0">{{getLastAcces(contact)}}</span>
+                                    <span class="last-msg text-center">{{getLastMsg(contact)}}</span>
                                 </div>
                             </li>
                         </ul>
