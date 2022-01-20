@@ -142,8 +142,11 @@ new Vue({
         getCurrentDate(){
             return dayjs().format('DD/MM/YYYY HH:mm:ss');
         },
-        removeMessage:function(index){
-            this.contacts[index].messages.splice(index,1);
+        // metodo per rimuove il messsaggio
+        // prendo i messaggi al currentindex
+        // e ai messaggi elimino quello desiderato dato dal modalindex
+        removeMessage:function(){
+            this.contacts[this.currentIndex].messages.splice(this.modalIndex,1);
         }
     },
     
