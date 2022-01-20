@@ -97,10 +97,7 @@ new Vue({
         // inizializzo un messaggio temporaneo vuoto
         temporaryMessage:'',
         // inizializzo un testo temporaneo per la barra di ricerca 
-        temporaryText:'',
-
-            
-            
+        temporaryText:'',    
     },
     // qui aggiungo tutti i miei metodi
     methods:{
@@ -144,7 +141,10 @@ new Vue({
         // metodo per prendere data con dayjs
         getCurrentDate(){
             return dayjs().format('DD/MM/YYYY HH:mm:ss');
-        }
+        },
+        // removeMessage:function(index,i){
+        //     this.contacts[index].messages.splice(i,1);
+        // }
     },
     
     // Soluzione alternativa per fare il filter

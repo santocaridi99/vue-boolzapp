@@ -106,7 +106,7 @@
                                     <i  @click='openModal(i)' class="fas fa-chevron-down position-absolute top-0 end-0 m-2"></i>
                                     <!-- modale appare solo se al click dell icona chiamo funzione open modal -->
                                     <!-- e se il suo indice è relativo all'indice del messaggio selezionato -->
-                                    <div v-if='modal && (modalIndex===i)' class="modals  position-absolute top-0 end-0 m-4">
+                                    <div v-if='modal &&  (modalIndex===i) && (currentIndex===i)' class="modals  position-absolute top-0 end-0 m-4">
                                         <p>Message info</p>
                                         <p>Delete message</p>
                                     </div>
